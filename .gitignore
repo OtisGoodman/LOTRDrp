@@ -21,3 +21,12 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+eclipse
+
+.gradle
+.idea
+build
+libs\LOTR_UpdatedLangFiles\*
+custom.bat
+*.lang
+libs/LOTR_UpdatedLangFiles/readme.txt
