@@ -1,5 +1,6 @@
 package com.otis.LOTRDrp.Client;
 
+import com.otis.LOTRDrp.Client.Config.LOTRDrpConfig;
 import com.otis.LOTRDrp.LOTRDrpUpdateChecker;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
@@ -19,7 +20,7 @@ public class LOTRDrpClientTickHandler {
     @SubscribeEvent
     public void onPreRenderGameOverlay(RenderGameOverlayEvent.Pre event) {
 
-        if (true) {
+        if (LOTRDrpConfig.enableVersionCheck) {
         LOTRDrpUpdateChecker.checkForUpdates();
         }
     }

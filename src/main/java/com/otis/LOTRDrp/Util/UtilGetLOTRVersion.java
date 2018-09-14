@@ -1,6 +1,5 @@
 package com.otis.LOTRDrp.Util;
 
-import com.otis.LOTRDrp.LOTRDrpConfig;
 import com.otis.LOTRDrp.LOTRDrpConnector;
 import com.otis.LOTRDrp.LOTRDrpMain;
 import net.minecraft.client.Minecraft;
@@ -18,9 +17,6 @@ import java.net.URL;
 public class UtilGetLOTRVersion {
     private static String versionURL;
     protected static boolean checkedVersion;
-    public static void reloadUpdateCheck(){
-        checkedVersion = false;
-    }
     public static void getLotrV() {
         if (!checkedVersion) {
             final Thread checkThread = new Thread("Checker") {

@@ -1,56 +1,61 @@
 package com.otis.LOTRDrp;
 
 import com.otis.LOTRDrp.Client.LOTRDrpClientProxy;
-import com.otis.LOTRDrp.Commands.CommandCheckForUpdates;
+import com.otis.LOTRDrp.Client.Config.LOTRDrpConfig;
 import com.otis.LOTRDrp.Util.UtilGetLOTRVersion;
+import com.otis.LOTRDrp.Util.UtilRemoveHandler;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.event.FMLServerStartingEvent;
-import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
 
+import static com.otis.LOTRDrp.Client.Config.LOTRDrpConfig.cfgVersion;
 
-@Mod(modid = LOTRDrpMain.MODID, version = LOTRDrpMain.VERSION, name = LOTRDrpMain.NAME, canBeDeactivated = true,acceptedMinecraftVersions = "1.7.10")
+
+@Mod(modid = LOTRDrpMain.MODID, version = LOTRDrpMain.VERSION, name = LOTRDrpMain.NAME, canBeDeactivated = false, acceptedMinecraftVersions = "1.7.10", guiFactory = "com.otis.LOTRDrp.Client.Config.LOTRDrpGui")
 public class LOTRDrpMain {
     @SidedProxy(clientSide = "com.otis.LOTRDrp.Client.LOTRDrpClientProxy")
     public static LOTRDrpClientProxy proxy;
     public static final String MODID = "lotrdrp";
-    public static final String VERSION = "1.3";
+    public static final String VERSION = "1.4";
+    protected static Boolean isDevBuild = false;
     public static final String NAME = "LOTR Drp";
-
-    private static LOTRDrpConfig config ;
     @Mod.Instance
     public static LOTRDrpMain drp = new LOTRDrpMain();
 
     public LOTRDrpConnector discord;
     private boolean playingOnFest = false;
-    private boolean playingOnFellowships= false;
-    private boolean playingOnFlames= false;
-    private boolean playingOnTime= false;
-    private boolean playingOnBfme= false;
-    private boolean playingOnTos= false;
-    private boolean playingOnSecond= false;
-    protected static String theme = "";
+    private boolean playingOnFellowships = false;
+    private boolean playingOnFlames = false;
+    private boolean playingOnTime = false;
+    private boolean playingOnBfme = false;
+    private boolean playingOnTos = false;
+    private boolean playingOnSecond = false;
+    private boolean playingOnGote = false;
+    public static String theme = "";
 
 
-
-
-
-        @Mod.EventHandler
-        public void preInit (FMLPreInitializationEvent event){
-            UtilGetLOTRVersion.getLotrV();
-            config.loadConfig(event);
+    @Mod.EventHandler
+    public void preInit(FMLPreInitializationEvent event) {
+        UtilGetLOTRVersion.getLotrV();
 
         LOTRDrpEventHandler handler = new LOTRDrpEventHandler();
         MinecraftForge.EVENT_BUS.register(handler);
         FMLCommonHandler.instance().bus().register(handler);
-        OTISLog("Thanks For Using LOTR Drp V"+VERSION);
-            proxy.preload();
+        OTISLog("Thanks For Using LOTR Drp V" + VERSION);
+        proxy.preload();
+        String cfgDir = event.getModConfigurationDirectory().toString();
+        LOTRDrpConfig.init(cfgDir);
+        FMLCommonHandler.instance().bus().register(new LOTRDrpConfig());
+        UtilRemoveHandler.removeOldConfig(event);
+
+
+
     }
+
 
 
     @Mod.EventHandler
@@ -58,7 +63,7 @@ public class LOTRDrpMain {
         discord = new LOTRDrpConnector();
         discord.run();
         proxy.postload();
-        }
+    }
 
     @Mod.EventHandler
     public void load(FMLInitializationEvent event) {
@@ -66,11 +71,11 @@ public class LOTRDrpMain {
     }
 
 
-
-    public static void OTISLog (String text){
-        System.out.println("[LOTR Drp] "+text);
+    public static void OTISLog(String text) {
+        System.out.println("[LOTR Drp] " + text);
     }
-///List Of Supported Servers
+
+    ///List Of Supported Servers
     public void setPlayingOnFest(boolean b) {
         this.playingOnFest = b;
     }
@@ -78,8 +83,9 @@ public class LOTRDrpMain {
     public boolean isPlayingOnFest() {
         return this.playingOnFest;
     }
+
     public void setPlayingOnFellowships(boolean b) {
-        this.playingOnFellowships= b;
+        this.playingOnFellowships = b;
     }
 
     public boolean isPlayingOnFellowships() {
@@ -87,7 +93,7 @@ public class LOTRDrpMain {
     }
 
     public void setPlayingOnFlames(boolean b) {
-        this.playingOnFlames= b;
+        this.playingOnFlames = b;
     }
 
     public boolean isPlayingOnFlames() {
@@ -95,7 +101,7 @@ public class LOTRDrpMain {
     }
 
     public void setPlayingOnTime(boolean b) {
-        this.playingOnTime= b;
+        this.playingOnTime = b;
     }
 
     public boolean isPlayingOnTime() {
@@ -103,9 +109,8 @@ public class LOTRDrpMain {
     }
 
 
-
     public void setPlayingOnBfme(boolean b) {
-        this.playingOnBfme= b;
+        this.playingOnBfme = b;
     }
 
     public boolean isPlayingOnBfme() {
@@ -113,7 +118,7 @@ public class LOTRDrpMain {
     }
 
     public void setPlayingOnTos(boolean b) {
-        this.playingOnTos= b;
+        this.playingOnTos = b;
     }
 
     public boolean isPlayingOnTos() {
@@ -121,13 +126,20 @@ public class LOTRDrpMain {
     }
 
     public void setPlayingOnSecond(boolean b) {
-        this.playingOnSecond= b;
+        this.playingOnSecond = b;
     }
 
     public boolean isPlayingOnSecond() {
         return this.playingOnSecond;
     }
-
+    public void setPlayingOnGote(boolean b) {
+        this.playingOnGote = b;
     }
+
+    public boolean isPlayingOnGote() {
+        return this.playingOnGote;
+    }
+
+}
 
 

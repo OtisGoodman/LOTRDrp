@@ -1,4 +1,5 @@
 package com.otis.LOTRDrp;
+import com.otis.LOTRDrp.LOTRDrpMain;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.event.ClickEvent;
@@ -35,7 +36,17 @@ public class LOTRDrpUpdateChecker {
                         updateReader.close();
                         updateVersion = updateVersion.trim();
                         final String currentVersion = LOTRDrpMain.VERSION;
-                        if (!updateVersion.equals(currentVersion)) {
+                       if (LOTRDrpMain.isDevBuild){
+                           final IChatComponent devBuild = new ChatComponentText(
+                                   "[LOTR Drp Update Checker] You Running A Dev Build! "+currentVersion);
+
+                           devBuild.getChatStyle().setColor(EnumChatFormatting.DARK_PURPLE);
+                           final EntityPlayer entityplayer = Minecraft.getMinecraft().thePlayer;
+
+                           if (entityplayer != null) {
+                               entityplayer.addChatComponentMessage(devBuild);
+                           }
+                       }else if (!updateVersion.equals(currentVersion)) {
                             final IChatComponent newUpdate = new ChatComponentText(
                                     "[LOTR Drp Update Checker] Update Available! "+updateVersion +" Click Here To Download The Latest Update");
 

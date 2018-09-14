@@ -5,11 +5,11 @@ import club.minnced.discord.rpc.DiscordEventHandlers.OnReady;
 import club.minnced.discord.rpc.DiscordRPC;
 import club.minnced.discord.rpc.DiscordRichPresence;
 import net.minecraft.client.Minecraft;
+import com.otis.LOTRDrp.Client.Config.LOTRDrpConfig;
 
 public class LOTRDrpConnector {
 
 	private static final String APP_ID = "432578629461999636";
-    public static boolean EnableDrp;
 	private DiscordRPC lib;
 	private DiscordEventHandlers handlers;
     public static  String v = "";
@@ -31,7 +31,7 @@ public class LOTRDrpConnector {
 
 		};
 		
-		if (EnableDrp){
+		if (LOTRDrpConfig.cfgEnableDrp){
             lib.Discord_Initialize(APP_ID, handlers, true, "");
         }
 
@@ -39,7 +39,7 @@ public class LOTRDrpConnector {
 		presence = new DiscordRichPresence();
 		presence.startTimestamp = System.currentTimeMillis() / 1000;
 		presence.largeImageKey = "simple";
-		presence.details = "LOTR Mod V"+ v;
+		presence.details = "LOTR Mod "+ v;
 		presence.state = "In Menu IGN:"+ Minecraft.getMinecraft().getSession().getUsername();
 		presence.largeImageText = "Snazzy Presence Brought To You By LOTR Drp!";
 		lib.Discord_UpdatePresence(presence);

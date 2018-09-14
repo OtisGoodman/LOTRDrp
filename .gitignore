@@ -30,3 +30,4 @@ libs\LOTR_UpdatedLangFiles\*
 custom.bat
 *.lang
 libs/LOTR_UpdatedLangFiles/readme.txt
+gradle/wrapper/gradle-wrapper.properties

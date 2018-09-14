@@ -1,5 +1,6 @@
 package com.otis.LOTRDrp;
 
+import com.otis.LOTRDrp.Client.Config.LOTRDrpConfig;
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.network.FMLNetworkEvent;
@@ -7,13 +8,13 @@ import net.minecraft.client.Minecraft;
 
 public class LOTRDrpEventHandler {
 
-    public static boolean enableServers;
+
     @SubscribeEvent(priority = EventPriority.NORMAL)
     public void connectedToServer(FMLNetworkEvent.ClientConnectedToServerEvent e) {
-
+        LOTRDrpUpdateChecker.reloadUpdateCheck();
         LOTRDrpMain.drp.discord.updateTimestamp();
 
-        if (!e.isLocal && enableServers) {
+        if (!e.isLocal && LOTRDrpConfig.cfgEnableServers) {
 
             if (Minecraft.getMinecraft().func_147104_D().serverIP.contains("LOTRFestive.beastmc.com")) {
                 LOTRDrpMain.drp.setPlayingOnFest(true);
@@ -72,15 +73,18 @@ public class LOTRDrpEventHandler {
 
 
 
-            }else if (Minecraft.getMinecraft().func_147104_D().serverIP.contains("TheDawnOfMiddleEarth.mcpro.io")) {
-                LOTRDrpMain.drp.setPlayingOnBfme(true);
-                LOTRDrpMain.drp.discord.updateImages("bfme", LOTRDrpMain.theme);
-                LOTRDrpMain.drp.discord.updateText("Rise of Middle Earth", "Playing Server " + Minecraft.getMinecraft().func_147104_D().serverIP.toString());
+            }else if (Minecraft.getMinecraft().func_147104_D().serverIP.contains("gatesoftheeast.g.akliz.net")) {
+                LOTRDrpMain.drp.setPlayingOnTos(true);
+                LOTRDrpMain.drp.discord.updateImages(null, "gote");
+                LOTRDrpMain.drp.discord.updateText("Gate Of The East", "Playing Server " + Minecraft.getMinecraft().func_147104_D().serverIP.toString());
                 LOTRDrpMain.drp.discord.updateState(
-                        "Rise of Middle Earth",
+                        "Gates Of The East",
                         Minecraft.getMinecraft().func_147104_D().serverIP.toString()
 
                 );
+                LOTRDrpMain.OTISLog(Minecraft.getMinecraft().getSession().getUsername() + "'s Pressence Is Now Set To GOTE Theme");
+
+
 
 
             }else if (Minecraft.getMinecraft().func_147104_D().serverIP.contains("54.39.28.42")||Minecraft.getMinecraft().func_147104_D().serverIP.contains("54.39.28.42:25566")||Minecraft.getMinecraft().func_147104_D().serverIP.contains("54.39.28.42:25566")) {
@@ -93,6 +97,7 @@ public class LOTRDrpEventHandler {
 
                 );
 
+                              LOTRDrpMain.OTISLog(Minecraft.getMinecraft().getSession().getUsername() + "'s Pressence Is Now Set To Second Server Theme");
 
 
             }else
@@ -141,8 +146,11 @@ public class LOTRDrpEventHandler {
                     if(LOTRDrpMain.drp.isPlayingOnTime())
                         if(LOTRDrpMain.drp.isPlayingOnTos())
                             if(LOTRDrpMain.drp.isPlayingOnBfme())
+                                if(LOTRDrpMain.drp.isPlayingOnGote())
 
         LOTRDrpMain.drp.setPlayingOnFest(false);
+        LOTRDrpMain.drp.setPlayingOnGote(false);
+
         LOTRDrpMain.drp.setPlayingOnFellowships(false);
         LOTRDrpMain.drp.setPlayingOnFlames(false);
         LOTRDrpMain.drp.setPlayingOnFest(false);
@@ -152,7 +160,7 @@ public class LOTRDrpEventHandler {
 
         LOTRDrpMain.drp.discord.updateTimestamp();
 
-        LOTRDrpMain.drp.discord.updateState("In Menu IGN:"+ Minecraft.getMinecraft().getSession().getUsername(), "LOTR Mod V"+ LOTRDrpConnector.v);
+        LOTRDrpMain.drp.discord.updateState("In Menu IGN:"+ Minecraft.getMinecraft().getSession().getUsername(), "LOTR Mod "+ LOTRDrpConnector.v);
         LOTRDrpMain.drp.discord.updateText("","Snazzy Presence Brought To You By LOTR Drp!");
         LOTRDrpMain.drp.discord.updateImages("","simple");
     }

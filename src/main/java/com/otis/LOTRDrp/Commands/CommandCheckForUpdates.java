@@ -4,10 +4,6 @@
 
     import com.otis.LOTRDrp.LOTRDrpUpdateChecker;
     import net.minecraft.command.*;
-    import net.minecraft.entity.player.EntityPlayer;
-    import net.minecraft.util.ChunkCoordinates;
-    import net.minecraft.world.WorldServer;
-    import cpw.mods.fml.common.FMLLog;
 
     public class CommandCheckForUpdates extends CommandBase
     {
