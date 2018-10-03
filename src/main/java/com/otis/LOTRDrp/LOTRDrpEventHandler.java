@@ -19,7 +19,7 @@ public class LOTRDrpEventHandler {
 
         if (!e.isLocal && LOTRDrpConfig.cfgEnableServers) {
 
-            if (Minecraft.getMinecraft().func_147104_D().serverIP.contains("LOTRFestive.beastmc.com")) {
+            if (Minecraft.getMinecraft().func_147104_D().serverIP.equalsIgnoreCase("LOTRFestive.beastmc.com")) {
                 LOTRDrpMain.drp.setPlayingOnSupportedServer(true);
                 LOTRDrpMain.drp.discord.updateImages("fest", LOTRDrpMain.theme);
                 LOTRDrpMain.drp.discord.updateText("Festivals Of Middle Earth", "Playing Server " + Minecraft.getMinecraft().func_147104_D().serverIP.toString());
@@ -41,7 +41,7 @@ public class LOTRDrpEventHandler {
                 );
                 LOTRDrpMain.OTISLog(Minecraft.getMinecraft().getSession().getUsername() + "'s Pressence Is Now Set To The Flame Theme");
 
-            } else if (Minecraft.getMinecraft().func_147104_D().serverIP.contains("TROP.g.akliz.net")) {
+            } else if (Minecraft.getMinecraft().func_147104_D().serverIP.equalsIgnoreCase("trop.g.akliz.net")) {
                 LOTRDrpMain.drp.setPlayingOnSupportedServer(true);
                 LOTRDrpMain.drp.discord.updateImages("trop", LOTRDrpMain.theme);
                 LOTRDrpMain.drp.discord.updateText("The Ring of Power", "Playing Server " + Minecraft.getMinecraft().func_147104_D().serverIP.toString());
