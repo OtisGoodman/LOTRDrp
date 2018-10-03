@@ -23,10 +23,7 @@ public class LOTRDrpClientTickHandler {
         if (LOTRDrpConfig.enableVersionCheck) {
         LOTRDrpUpdateChecker.checkForUpdates();
         }
-     if (!ChangeLog.hasSeenChangeLog){
-         ChangeLog.run();
-     }
-
+  
 
     }
 }
