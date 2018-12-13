@@ -28,7 +28,7 @@ eclipse
 build
 libs\LOTR_UpdatedLangFiles\*
 custom.bat
-*.lang
-libs/LOTR_UpdatedLangFiles/readme.txt
+*.
+libs/LOTR_UpdatedLangFiles/readme.txtlang
 gradle/wrapper/gradle-wrapper.properties
 desktop.ini

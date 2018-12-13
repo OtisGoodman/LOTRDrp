@@ -19,16 +19,28 @@ public class LOTRDrpEventHandler {
 
         if (!e.isLocal && LOTRDrpConfig.cfgEnableServers) {
 
-            if (Minecraft.getMinecraft().func_147104_D().serverIP.equalsIgnoreCase("LOTRFestive.beastmc.com")) {
+            if (Minecraft.getMinecraft().func_147104_D().serverIP.equalsIgnoreCase("148.251.40.254:25652") || Minecraft.getMinecraft().func_147104_D().serverIP.equalsIgnoreCase("harda.tournier.org:25575")) {
                 LOTRDrpMain.drp.setPlayingOnSupportedServer(true);
-                LOTRDrpMain.drp.discord.updateImages("fest", LOTRDrpMain.theme);
-                LOTRDrpMain.drp.discord.updateText("Festivals Of Middle Earth", "Playing Server " + Minecraft.getMinecraft().func_147104_D().serverIP.toString());
+                LOTRDrpMain.drp.discord.updateImages("harda", LOTRDrpMain.theme);
+                LOTRDrpMain.drp.discord.updateText("It's A hArda World", "Playing Server " + Minecraft.getMinecraft().func_147104_D().serverIP.toString());
                 LOTRDrpMain.drp.discord.updateState(
-                        "Festivals Of Middle Earth",
+                        "It's A hArda World",
                         Minecraft.getMinecraft().func_147104_D().serverIP.toString()
 
                 );
-                LOTRDrpMain.OTISLog(Minecraft.getMinecraft().getSession().getUsername() + "'s Pressence Is Now Set To The Fest Theme");
+                LOTRDrpMain.OTISLog(Minecraft.getMinecraft().getSession().getUsername() + "'s Pressence Is Now Set To The Harda Theme");
+
+            } else
+                if (Minecraft.getMinecraft().func_147104_D().serverIP.contains("lotr.mine.bz")) {
+                LOTRDrpMain.drp.setPlayingOnSupportedServer(true);
+                LOTRDrpMain.drp.discord.updateImages("serv", LOTRDrpMain.theme);
+                LOTRDrpMain.drp.discord.updateText("LOTR Survival", "Playing Server " + Minecraft.getMinecraft().func_147104_D().serverIP.toString());
+                LOTRDrpMain.drp.discord.updateState(
+                        "LOTR Survival",
+                        Minecraft.getMinecraft().func_147104_D().serverIP.toString()
+
+                );
+                LOTRDrpMain.OTISLog(Minecraft.getMinecraft().getSession().getUsername() + "'s Pressence Is Now Set To The Flame Theme");
 
             } else if (Minecraft.getMinecraft().func_147104_D().serverIP.contains("fow.amuzil.com")) {
                 LOTRDrpMain.drp.setPlayingOnSupportedServer(true);

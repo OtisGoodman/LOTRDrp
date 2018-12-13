@@ -29,7 +29,7 @@ public class LOTRDrpMain {
     public static LOTRDrpClientProxy proxy;
     public static File configDir;
     public static final String MODID = "lotrdrp";
-    public static final String VERSION = "1.5.1";
+    public static final String VERSION = "1.5.3";
     public static Boolean isDevBuild = false;
     public static final String NAME = "LOTR Drp";
     @Mod.Instance
