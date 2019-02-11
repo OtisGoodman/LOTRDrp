@@ -19,9 +19,9 @@ import java.util.Random;
 import static com.otis.LOTRDrp.LOTRDrpMain.theme;
 
 public class LOTRDrpConfig {
-    public static String[] allThemesId = {"minecraft-lord-of-the-rings-mod", "mithril", "pvp", "quest", "book", "smokeship", "fest", "coin", "horn", "truesilver", "kingsfoil", "compass"};
+    public static String[] allThemesId = {"minecraft-lord-of-the-rings-mod", "mithril", "pvp", "quest", "book", "smokeship", "fest", "coin", "horn", "truesilver", "kingsfoil", "compass","bounty"};
 
-    private static String[] allThemes = {"default", "mithril", "pvp", "quest", "book", "smoke-ship", "pipe", "coin", "horn", "true-silver", "kings-foil", "compass", "random"};
+    private static String[] allThemes = {"default", "mithril", "pvp", "quest", "book", "smoke-ship", "pipe", "coin", "horn", "true-silver", "kings-foil", "compass", "random","bounty"};
 
     public static String getAllThemeNames() {
 
@@ -63,10 +63,10 @@ public class LOTRDrpConfig {
 
         if (theme != allThemes[0] || theme != (allThemes[1]) || theme != (allThemes[2]) || theme != (allThemes[3])
                 || theme != (allThemes[4]) || theme != (allThemes[5]) || theme != (allThemes[6]) || theme != (allThemes[7])
-                || theme != (allThemes[8]) || theme != (allThemes[9]) || theme != (allThemes[10]) || theme != (allThemes[11]) || theme != (allThemes[13])) {
+                || theme != (allThemes[8]) || theme != (allThemes[9]) || theme != (allThemes[10]) || theme != (allThemes[11]) || theme != (allThemes[13]) || theme != (allThemes[14])) {
         }
         Random rand = new Random();
-        themeNo = rand.nextInt(allThemesId.length) + 1;
+        themeNo = rand.nextInt(allThemesId.length);
         LOTRDrpMain.theme = "minecraft-lord-of-the-rings-mod";
         OTISLog("Invalid Theme " + theme);
 
@@ -121,6 +121,9 @@ public class LOTRDrpConfig {
         } else if (theme.equalsIgnoreCase("random")) {
             LOTRDrpMain.theme = allThemesId[themeNo];
             OTISLog("theme set to random");
+        }else if (theme.equalsIgnoreCase("bounty")) {
+            LOTRDrpMain.theme = "bounty";
+            OTISLog("theme set to bounty");
         }
 
 

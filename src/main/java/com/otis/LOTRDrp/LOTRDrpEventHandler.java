@@ -42,16 +42,29 @@ public class LOTRDrpEventHandler {
                 );
                 LOTRDrpMain.OTISLog(Minecraft.getMinecraft().getSession().getUsername() + "'s Pressence Is Now Set To The Flame Theme");
 
-            } else if (Minecraft.getMinecraft().func_147104_D().serverIP.contains("fow.amuzil.com")) {
+            } else
+                if (Minecraft.getMinecraft().func_147104_D().serverIP.contains("fow.amuzil.com")) {
+                    LOTRDrpMain.drp.setPlayingOnSupportedServer(true);
+                    LOTRDrpMain.drp.discord.updateImages("flames", LOTRDrpMain.theme);
+                    LOTRDrpMain.drp.discord.updateText("Flames of War", "Playing Server " + Minecraft.getMinecraft().func_147104_D().serverIP.toString());
+                    LOTRDrpMain.drp.discord.updateState(
+                            "Flames of War",
+                            Minecraft.getMinecraft().func_147104_D().serverIP.toString()
+
+                    );
+                    LOTRDrpMain.OTISLog(Minecraft.getMinecraft().getSession().getUsername() + "'s Pressence Is Now Set To The Flame Theme");
+
+                }else
+                    if (Minecraft.getMinecraft().func_147104_D().serverIP.contains("96.43.140.122:25625")) {
                 LOTRDrpMain.drp.setPlayingOnSupportedServer(true);
-                LOTRDrpMain.drp.discord.updateImages("flames", LOTRDrpMain.theme);
-                LOTRDrpMain.drp.discord.updateText("Flames of War", "Playing Server " + Minecraft.getMinecraft().func_147104_D().serverIP.toString());
+                LOTRDrpMain.drp.discord.updateImages("dt", LOTRDrpMain.theme);
+                LOTRDrpMain.drp.discord.updateText("Dark Times", "Playing Server Dark Times");
                 LOTRDrpMain.drp.discord.updateState(
-                        "Flames of War",
-                        Minecraft.getMinecraft().func_147104_D().serverIP.toString()
+                        "Dark Times",
+                       "**********************"
 
                 );
-                LOTRDrpMain.OTISLog(Minecraft.getMinecraft().getSession().getUsername() + "'s Pressence Is Now Set To The Flame Theme");
+                LOTRDrpMain.OTISLog(Minecraft.getMinecraft().getSession().getUsername() + "'s Pressence Is Now Set To The Dt Theme Theme");
 
             } else if (Minecraft.getMinecraft().func_147104_D().serverIP.equalsIgnoreCase("trop.g.akliz.net")) {
                 LOTRDrpMain.drp.setPlayingOnSupportedServer(true);
@@ -63,17 +76,6 @@ public class LOTRDrpEventHandler {
 
                 );
                 LOTRDrpMain.OTISLog(Minecraft.getMinecraft().getSession().getUsername() + "'s Pressence Is Now Set To The Trop Theme");
-
-            }else if (Minecraft.getMinecraft().func_147104_D().serverIP.contains("fellowships.g.akliz.net")) {
-                LOTRDrpMain.drp.setPlayingOnSupportedServer(true);
-                LOTRDrpMain.drp.discord.updateImages("fellowships", LOTRDrpMain.theme);
-                LOTRDrpMain.drp.discord.updateText("Fellowships of Middle-Earth", "Playing Server " + Minecraft.getMinecraft().func_147104_D().serverIP.toString());
-                LOTRDrpMain.drp.discord.updateState(
-                        "Fellowships of Middle-Earth",
-                        Minecraft.getMinecraft().func_147104_D().serverIP.toString()
-
-                );
-                LOTRDrpMain.OTISLog(Minecraft.getMinecraft().getSession().getUsername() + "'s Pressence Is Now Set To The Fellowships Theme");
 
             } else if (Minecraft.getMinecraft().func_147104_D().serverIP.contains("kpabr.com")) {
                 LOTRDrpMain.drp.setPlayingOnSupportedServer(true);
