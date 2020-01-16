@@ -1,0 +1,190 @@
+@font-face {
+    font-family: "hobbiton";
+    src:url("https://cdn.glitch.com/b3dd79af-855c-4c85-b2ef-e633a2ad0118%2Fhobbit.ttf?v=1576703727253");
+  }
+  .hobbitText{
+    font-family: hobbiton;
+  }
+  
+  .text-muted{
+    font-weight: normal;
+    color: rgba(80, 80, 80, 0.945);
+    text-decoration: none;
+  }
+  a{
+    text-decoration: none;
+    color: rgb(66, 35, 122)
+  }
+  
+  .content{
+    text-align: center;
+    margin: auto;
+  }
+  .borrder{
+    background-color: rgb(38, 43, 46);
+  
+  }
+  
+  .module-contents {
+    margin-top: 120px;
+    padding-bottom: 40px;
+    background-color: #384248;
+  }
+  
+  .navbar {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color:rgb(49, 56, 145);
+      position: sticky;
+    }
+    
+    .navbarItem {
+      float: left;
+    }
+  
+  .navbarLink {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    .navbarTitle {
+      display: block;
+      color: rgb(52, 75, 177);
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      margin-left: 210px;
+      background-color: rgb(184, 99, 19);
+  
+    }
+  
+    .navbarLink:hover:not(.active) {
+      background-color:rgb(184, 99, 19);
+    }
+  
+    .navbarLink:hover{
+      text-decoration: none;
+    }
+    
+    .active {
+      background-color: rgb(184, 99, 19);
+    }
+    #logo{
+        width:  46px;
+        height: 46px;
+    }
+    body{
+        background-color: rgb(35,39,42);
+       
+    }
+   
+    
+    .footer {
+      background-color: rgba(0, 0, 0, 0.2);
+      text-align: center;
+      padding-top: 5px;
+      position: absolute;
+      width: 100%;
+      bottom: 0px;
+      margin: auto;
+      padding: 10px;
+      box-shadow: 0px -2px 2px rgba(0,0,0,0.2);
+ 
+    }
+    .title{
+    border-left: 4px solid rgb(49, 56, 145);
+    background-color: rgba(0, 0, 0, 0.2);
+    }
+    p{
+      font-family: 'Ubuntu', sans-serif;
+      margin: auto;
+    }
+    .miniHeader{
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .image {
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.26);
+      width: 100px;
+      height: 100px;
+      left:0px;
+      margin: unset;
+    }
+  
+    .link{
+      color: rgba(115, 122, 219, 0.87);
+      text-decoration: underline;
+    }
+    .small{
+      font-size: 12px;
+        }
+    .reletive{
+      position: absolute;
+    }
+    .image:hover{
+      width: 200px;
+      height: 200px;
+    }
+    .themeName{
+      color: rgb(39, 104, 23);
+    }
+    .themeInfo{
+      color: rgb(25, 26, 24);
+    }
+    yellow{
+      color:rgba(240, 225, 18, 0.897);
+      font-family: 'Ubuntu', sans-serif;
+      margin: auto;
+    }
+    .ssLink{
+      color: rgba(10, 177, 74, 0.87);
+      text-decoration: underline;
+      font-size: 10px;
+    }
+    .download {
+      display: inline-block;
+      border-radius: 4px;
+      background-color: #1b791b;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 28px;
+      padding: 20px;
+      width: 200px;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 5px;
+    }
+    
+    .download span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+    
+    .download span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+    
+    .download:hover span {
+      padding-right: 25px;
+    }
+    
+    .bdownloadutton:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+    .version{
+      font-size: 15;
+      color:grey;
+    }

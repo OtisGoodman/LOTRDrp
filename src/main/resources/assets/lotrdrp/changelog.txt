@@ -1,0 +1,79 @@
+                            |                LOTR Drp                  |
+                            |                Change Log                |
+                            |------------------------------------------|
+Added +
+Removed -
+Fixed %
+Changed &
+
+1.0
++ Evrything!
+
+1.1
++ Smoke Ship Theme!
++ Kebab Theme!
++ Supported Server Battle For Middle Earth!
+% Bug With Logo And Info Not Showing Up!
++ Update Checker
++ Command Check Update
+& LOTR Mod Version To Be A Bit Smaller And Readable
+
+1.2
+% Added a space before the ip when you are playing on an unknown server
+% Bug with the mcmod.info not showing up
++ Supported Server Second Server That Wont Rule Anything
+% Fixed Problem With The Command /checkForUpdates
+
+1.3
++ Now Works With B34!
+% Fixed Spacing Problems With Server Icons
+
+1.4
++ Indev Version Checker
++ Config File
+- The Old Config File
+ + Config Gui
+- Old Config File Updater
++ Config File Updater
++ Supported Server Gates Of The East
+- Kebab Theme Because It Looks Like Crap And I Can't Seem To Make It Look Any Better
+% Problem With New Servers Not Loging
+& The Text On The New LOTR Mod Version So That They Are Not V Version 34.2
++ Updated To LOTR Mod B34.2
+
+1.5
++ Ingame Loging
++ Theme Mithril
++ Theme Pipe
++ Theme Coin
++ Theme True-Silver
++ Theme Horn
++ Theme Compass
++ Theme Random (Chooses A Random Theme)
++ Seasonal Themes
+
+1.5.1
+
+ % Some server ips not working for supported servers
+
+1.5.2
+
+ + Now Supports LOTR Survival
+
+
+1.5.3
++ Now Supports New Harda
+
+1.6
+% Crash With The Random Theme
+- Supported Fome Because It Closed
++ Bounty Theme
+
+1.7
+% Typo In Mcmod.info
+% Default Theme To Random
++ Supports Spark Of Arda
++ Gondolin Theme
++ Flesh Theme
++ Supports Dome
++ Supports Private Testing Server
