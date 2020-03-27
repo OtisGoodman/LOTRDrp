@@ -30,12 +30,12 @@ public class LOTRDrpMain {
     public static File configDir;
     public static final String MODID = "lotrdrp";
     public static final String VERSION = "1.8";
-    public static Boolean isDevBuild = false;
+    public static Boolean isDevBuild = true;
     public static final String NAME = "LOTR Drp";
     @Mod.Instance
     public static LOTRDrpMain drp = new LOTRDrpMain();
     public LOTRDrpConnector discord;
-    private boolean playingOnSupportedServer = true;
+    private boolean playingOnSupportedServer = false;
 
 
     public static String theme = "";

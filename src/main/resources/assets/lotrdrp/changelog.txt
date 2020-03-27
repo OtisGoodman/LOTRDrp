@@ -79,4 +79,5 @@ Changed &
 + Supports Private Testing Server
 
 1.8
-- removed /checkForUpdates command
+- /checkForUpdates command
++ Evenstar theme
