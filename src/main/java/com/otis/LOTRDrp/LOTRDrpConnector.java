@@ -4,6 +4,7 @@ import club.minnced.discord.rpc.DiscordEventHandlers;
 import club.minnced.discord.rpc.DiscordEventHandlers.OnReady;
 import club.minnced.discord.rpc.DiscordRPC;
 import club.minnced.discord.rpc.DiscordRichPresence;
+import club.minnced.discord.rpc.DiscordUser;
 import net.minecraft.client.Minecraft;
 import com.otis.LOTRDrp.Client.Config.LOTRDrpConfig;
 
@@ -22,10 +23,9 @@ public class LOTRDrpConnector {
 		
 		handlers.ready = new OnReady() {
 			@Override
-			public void accept() {
+			public void accept(DiscordUser arg0) {
 				com.otis.LOTRDrp.LOTRDrpMain.OTISLog("LOTR Drp Is Ready!");
-
-
+				
 			}
 
 		};

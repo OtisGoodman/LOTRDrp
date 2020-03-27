@@ -1,3 +1,3 @@
 @echo off
-     call gradlew setupDecompWorkspace & gradlew genIntellijRuns
-     pause
+     call gradlew setupDecompWorkspace & gradlew eclipse
+pause

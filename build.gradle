@@ -18,11 +18,11 @@ buildscript {
 apply plugin: 'forge'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
-version = "1.7"
+version = "1.8"
 group= "com.otis.LOTRDRP" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "LOTRDRP"
 
-if (false) {
+if (true) {
     version = version +"-Beta"
 }
 

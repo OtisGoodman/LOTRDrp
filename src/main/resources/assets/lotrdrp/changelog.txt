@@ -77,3 +77,6 @@ Changed &
 + Flesh Theme
 + Supports Dome
 + Supports Private Testing Server
+
+1.8
+- removed /checkForUpdates command
