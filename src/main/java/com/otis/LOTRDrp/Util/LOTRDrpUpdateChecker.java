@@ -52,7 +52,7 @@ public class LOTRDrpUpdateChecker {
 
                             newUpdate.getChatStyle().setColor(EnumChatFormatting.DARK_RED);
                             newUpdate.getChatStyle().setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ChatComponentText("Check Out Our Wiki And Download The Latest Version Here!")));
-                            newUpdate.getChatStyle().setChatClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://lotrminecraftmod.wikia.com/wiki/User:Otis_Goodman/presence"));
+                            newUpdate.getChatStyle().setChatClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "http://lotrdrp.us.to/download.html"));
                             final EntityPlayer entityplayer = Minecraft.getMinecraft().thePlayer;
 
                             if (entityplayer != null) {

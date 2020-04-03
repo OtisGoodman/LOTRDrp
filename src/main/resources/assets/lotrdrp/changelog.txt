@@ -81,3 +81,13 @@ Changed &
 1.8
 - /checkForUpdates command
 + Evenstar theme
++ Ascension d’Arda supported
+- hArda support
+- Spark of arda support
+- DOME support
+- Timeless halls support
+& Supported server Code
++ Incognito mode option in config
+& Descriptions in the config
+& The mod no longer checks your LOTR Verison from a Dropbox file it now checks it from your LOTRMod
++ Edgorovs realm support
