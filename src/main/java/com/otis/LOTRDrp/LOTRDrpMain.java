@@ -32,7 +32,7 @@ public class LOTRDrpMain {
     public static File configDir;
     public static final String MODID = "lotrdrp";
     public static final String VERSION = "1.8";
-    public static Boolean isDevBuild = true;
+    public static Boolean isDevBuild = false;
     public static final String NAME = "LOTR Drp";
     @Mod.Instance
     public static LOTRDrpMain drp = new LOTRDrpMain();
