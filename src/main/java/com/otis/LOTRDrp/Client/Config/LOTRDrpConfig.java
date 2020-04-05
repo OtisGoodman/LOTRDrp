@@ -19,7 +19,7 @@ import java.util.Random;
 import static com.otis.LOTRDrp.LOTRDrpMain.theme;
 
 public class LOTRDrpConfig {
-    public static String[] allThemesId = {"minecraft-lord-of-the-rings-mod", "mithril", "pvp", "quest", "book", "smokeship", "fest", "coin", "horn", "truesilver", "kingsfoil", "compass","bounty","gondolin","flesh","evenstar"};
+    public static String[] allThemesId = {"minecraft-lord-of-the-rings-mod", "mithril", "pvp", "quest", "book", "smokeship", "siege", "coin", "horn", "truesilver", "kingsfoil", "compass","bounty","gondolin","flesh","evenstar"};
 
     private static String[] allThemes = {"default", "mithril", "pvp", "quest", "book", "smoke-ship", "pipe", "coin", "horn", "true-silver", "kings-foil", "compass", "random","bounty","gondolin","flesh","evenstar"};
 
@@ -104,7 +104,7 @@ public class LOTRDrpConfig {
             OTISLog("theme set to coin");
 
         } else if (theme.equalsIgnoreCase("pipe")) {
-            LOTRDrpMain.theme = "fest";
+            LOTRDrpMain.theme = "siege";
             OTISLog("theme set to pipe");
 
         } else if (theme.equalsIgnoreCase("horn")) {

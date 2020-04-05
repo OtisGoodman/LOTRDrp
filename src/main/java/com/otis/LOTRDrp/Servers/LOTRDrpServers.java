@@ -155,6 +155,21 @@ public static ISupportedServer Edgorovs = new ISupportedServer() {
 		return "engov";
 	}
 };
+public static ISupportedServer Champ = new ISupportedServer() {
+	@Override
+	public String name() {
+		return "The Champions Game";
+	}
+	@Override
+	public String ip() {
+
+		return "tcg.apexmc.co";
+	}
+	@Override
+	public String iconName() {
+		return "cg";
+	}
+};
 	
 	private static final Map<String, ISupportedServer> servers = new HashMap<>();
 	private static ArrayList<String> serverList = new ArrayList<String>();
@@ -170,6 +185,8 @@ public static ISupportedServer Edgorovs = new ISupportedServer() {
 		addServer(DOME);
 		addServer(Ascension);
 		addServer(Edgorovs);
+		addServer(Champ);
+
 
 	}
 	public static void addServer(ISupportedServer server) {

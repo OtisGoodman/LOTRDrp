@@ -91,3 +91,5 @@ Changed &
 & Descriptions in the config
 & The mod no longer checks your LOTR Verison from a Dropbox file it now checks it from your LOTRMod
 + Edgorovs realm support
++ The Champions Game support
+% The pipe theme
