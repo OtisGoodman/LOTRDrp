@@ -2,6 +2,9 @@ package com.otis.LOTRDrp.Util;
 
 import com.otis.LOTRDrp.LOTRDrpConnector;
 import com.otis.LOTRDrp.LOTRDrpMain;
+
+import lotr.common.LOTRMod;
+import lotr.common.LOTRModInfo;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.event.ClickEvent;
@@ -15,7 +18,35 @@ import java.io.InputStreamReader;
 import java.net.URL;
 
 public class UtilGetLOTRVersion {
-    private static String versionURL;
+	 /**  protected static boolean checkedVersion;
+	    public static void getLotrV() {
+	        if (!checkedVersion) {
+	            final Thread checkThread = new Thread("Checker") {
+	                public void run() {
+	                    try {
+	                        String lotrVersion = LOTRModInfo.version.substring(7, 12);
+	                    	lotrVersion = lotrVersion.trim();
+	                        LOTRDrpConnector.v = " "+lotrVersion;
+
+	                    
+	                    } catch (Exception e) {
+	                        LOTRDrpMain.OTISLog("LOTR Check Failed");
+	                        e.printStackTrace();
+	                    }
+	                }
+	            };
+	            checkThread.setDaemon(checkedVersion = true);
+	            checkThread.start();
+	        }
+	    }
+
+	    static {
+	        checkedVersion = false;
+	    }
+	
+	*/
+	
+	private static String versionURL;
     protected static boolean checkedVersion;
     public static void getLotrV() {
         if (!checkedVersion) {

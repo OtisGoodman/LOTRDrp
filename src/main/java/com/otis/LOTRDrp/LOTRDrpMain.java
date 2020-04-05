@@ -2,6 +2,8 @@ package com.otis.LOTRDrp;
 
 import com.otis.LOTRDrp.Client.LOTRDrpClientProxy;
 import com.otis.LOTRDrp.Client.Config.LOTRDrpConfig;
+import com.otis.LOTRDrp.Servers.LOTRDrpServers;
+import com.otis.LOTRDrp.Servers.LOTRDrpSupportedServerHandler;
 import com.otis.LOTRDrp.Util.UtilGetLOTRVersion;
 import com.otis.LOTRDrp.Util.UtilGetSeason;
 import com.otis.LOTRDrp.Util.UtilRemoveHandler;
@@ -29,7 +31,7 @@ public class LOTRDrpMain {
     public static LOTRDrpClientProxy proxy;
     public static File configDir;
     public static final String MODID = "lotrdrp";
-    public static final String VERSION = "1.7";
+    public static final String VERSION = "1.8";
     public static Boolean isDevBuild = false;
     public static final String NAME = "LOTR Drp";
     @Mod.Instance
@@ -41,7 +43,8 @@ public class LOTRDrpMain {
     public static String theme = "";
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        UtilGetSeason.getSeason();
+    	LOTRDrpServers.initServers();
+    	UtilGetSeason.getSeason();
         UtilGetLOTRVersion.getLotrV();
         LOTRDrpEventHandler handler = new LOTRDrpEventHandler();
         MinecraftForge.EVENT_BUS.register(handler);

@@ -186,3 +186,7 @@ yellow {
   font-size: 15;
   color: grey;
 }
+.warning{
+  color:darkred;
+  background-color: black;
+}

@@ -19,9 +19,9 @@ import java.util.Random;
 import static com.otis.LOTRDrp.LOTRDrpMain.theme;
 
 public class LOTRDrpConfig {
-    public static String[] allThemesId = {"minecraft-lord-of-the-rings-mod", "mithril", "pvp", "quest", "book", "smokeship", "fest", "coin", "horn", "truesilver", "kingsfoil", "compass","bounty","gondolin","flesh"};
+    public static String[] allThemesId = {"minecraft-lord-of-the-rings-mod", "mithril", "pvp", "quest", "book", "smokeship", "siege", "coin", "horn", "truesilver", "kingsfoil", "compass","bounty","gondolin","flesh","evenstar"};
 
-    private static String[] allThemes = {"default", "mithril", "pvp", "quest", "book", "smoke-ship", "pipe", "coin", "horn", "true-silver", "kings-foil", "compass", "random","bounty","gondolin","flesh"};
+    private static String[] allThemes = {"default", "mithril", "pvp", "quest", "book", "smoke-ship", "pipe", "coin", "horn", "true-silver", "kings-foil", "compass", "random","bounty","gondolin","flesh","evenstar"};
 
     public static String getAllThemeNames() {
 
@@ -35,6 +35,7 @@ public class LOTRDrpConfig {
     public static boolean enableVersionCheck;
     public static boolean enableIngameLoging;
     public static boolean hasSeenChnagelog;
+    public static boolean incognitoMode;
 
     public static String theme;
     public static Integer themeNo;
@@ -53,17 +54,16 @@ public class LOTRDrpConfig {
 
     private static void loadConfig() {
         ///     cfgVersion = config.getString("Config File Version",Configuration.CATEGORY_GENERAL,LOTRDrpMain.VERSION,"PLEASE DON'T MESS WITH THIS!!!!");
-        cfgEnableServers = config.getBoolean("Enable Server Icons", Configuration.CATEGORY_GENERAL, true, "If This Is On It Will Display Custom Server Icons And Text");
-        enableVersionCheck = config.getBoolean("Enable Version Check", Configuration.CATEGORY_GENERAL, true, "If This Is Off The Version Checker Will Not Run");
-
-        cfgEnableDrp = config.getBoolean("Enable Presence", Configuration.CATEGORY_GENERAL, true, "If This Is Off The Discord Ritch Presence  Will Not Display");
+        cfgEnableServers = config.getBoolean("Enable Server Icons", Configuration.CATEGORY_GENERAL, true, "If this is enabled LOTRDrp will give custom images and text for supported servers.");
+        enableVersionCheck = config.getBoolean("Enable Version Check", Configuration.CATEGORY_GENERAL, true, "If this is enabled LOTRDrp will check for updates.");
+        cfgEnableDrp = config.getBoolean("Enable Presence", Configuration.CATEGORY_GENERAL, true, "If this is enabled your LOTRDrp pressence will not apear.");
         theme = config.getString("DRP Theme", Configuration.CATEGORY_GENERAL, "random", "Themes " + LOTRDrpConfig.getAllThemeNames());
-        enableIngameLoging = config.getBoolean("Enable Ingame Loging", Configuration.CATEGORY_GENERAL, false, "If This Is On All Logs Will Be Show Up In Chat");
-
-
+        enableIngameLoging = config.getBoolean("Enable Ingame Loging", Configuration.CATEGORY_GENERAL, false, "If this is enabled all your LOTRDrp logs showup in minecraft chat.");
+        incognitoMode = config.getBoolean("Incognito Mode", Configuration.CATEGORY_GENERAL, false, "If this is enabled your server and world name will be hiden and the supported server system will be disabled.");
         if (theme != allThemes[0] || theme != (allThemes[1]) || theme != (allThemes[2]) || theme != (allThemes[3])
                 || theme != (allThemes[4]) || theme != (allThemes[5]) || theme != (allThemes[6]) || theme != (allThemes[7])
-                || theme != (allThemes[8]) || theme != (allThemes[9]) || theme != (allThemes[10]) || theme != (allThemes[11]) || theme != (allThemes[13]) || theme != (allThemes[14]) || theme != (allThemes[15]) || theme != (allThemes[16])) {
+                || theme != (allThemes[8]) || theme != (allThemes[9]) || theme != (allThemes[10]) || theme != (allThemes[11]) 
+                || theme != (allThemes[13]) || theme != (allThemes[14]) || theme != (allThemes[15]) || theme != (allThemes[16]) || theme != (allThemes[17])) {
         }
         Random rand = new Random();
         themeNo = rand.nextInt(allThemesId.length);
@@ -104,7 +104,7 @@ public class LOTRDrpConfig {
             OTISLog("theme set to coin");
 
         } else if (theme.equalsIgnoreCase("pipe")) {
-            LOTRDrpMain.theme = "fest";
+            LOTRDrpMain.theme = "siege";
             OTISLog("theme set to pipe");
 
         } else if (theme.equalsIgnoreCase("horn")) {
@@ -130,6 +130,9 @@ public class LOTRDrpConfig {
         }else if (theme.equalsIgnoreCase("gondolin")) {
             LOTRDrpMain.theme = "gondolin";
             OTISLog("theme set to gondolin");
+        }else if (theme.equalsIgnoreCase("evenstar")) {
+            LOTRDrpMain.theme = "evenstar";
+            OTISLog("theme set to evenstar");
         }
 
 
