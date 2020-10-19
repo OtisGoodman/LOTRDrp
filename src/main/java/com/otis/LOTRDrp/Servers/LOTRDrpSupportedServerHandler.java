@@ -10,7 +10,7 @@ import net.minecraft.client.Minecraft;
 public class LOTRDrpSupportedServerHandler {
 
 	public static void handleServerJoin(String ip,FMLNetworkEvent.ClientConnectedToServerEvent e) {
-		LOTRDrpMain.OTISLog("handling srver join event!");
+		LOTRDrpMain.LOG.info("handling srver join event!");
 			if (e.isLocal) {
 				handleSPJoin();
 			}else {
@@ -30,7 +30,7 @@ public class LOTRDrpSupportedServerHandler {
                 "On: " + Minecraft.getMinecraft().getIntegratedServer().getWorldName(),
                 "Playing Singleplayer"
         );
-          LOTRDrpMain.OTISLog(Minecraft.getMinecraft().getSession().getUsername() + "is playing on singleplayer");
+          LOTRDrpMain.LOG.info(Minecraft.getMinecraft().getSession().getUsername() + "is playing on singleplayer");
 	}else {
 	handleIncognitoMode();	
 	}
@@ -42,11 +42,11 @@ public class LOTRDrpSupportedServerHandler {
                 "Playing LOTR Mod" + LOTRDrpConnector.v,
                 "Minecraft 1.7.10"
         );
-          LOTRDrpMain.OTISLog(Minecraft.getMinecraft().getSession().getUsername() + "Enabled Incognito Mode");
+          LOTRDrpMain.LOG.info(Minecraft.getMinecraft().getSession().getUsername() + "Enabled Incognito Mode");
 	}
 	private static void handleSSJoin(String ip) {
 		if (!LOTRDrpConfig.incognitoMode) {
-		LOTRDrpMain.OTISLog("Found supported server!");
+		LOTRDrpMain.LOG.info("Found supported server!");
 		ISupportedServer server = LOTRDrpServers.getServers().get(ip);
 		  LOTRDrpMain.drp.setPlayingOnSupportedServer(true);
           LOTRDrpMain.drp.discord.updateImages(server.iconName(), LOTRDrpMain.theme);
@@ -57,7 +57,7 @@ public class LOTRDrpSupportedServerHandler {
 
           );
 
-          LOTRDrpMain.OTISLog(Minecraft.getMinecraft().getSession().getUsername() + "is playing on "+server.name());
+          LOTRDrpMain.LOG.info(Minecraft.getMinecraft().getSession().getUsername() + "is playing on "+server.name());
 	}else {
 	handleIncognitoMode();	
 	}
@@ -69,7 +69,7 @@ public class LOTRDrpSupportedServerHandler {
           LOTRDrpMain.drp.discord.updateState(
                   "On: " + ip,
                   "Playing On An Unknown Server ");
-            LOTRDrpMain.OTISLog(Minecraft.getMinecraft().getSession().getUsername() + "is playing on a server with the ip of "+ip);
+            LOTRDrpMain.LOG.info(Minecraft.getMinecraft().getSession().getUsername() + "is playing on a server with the ip of "+ip);
 	}else {
 		handleIncognitoMode();
 	}

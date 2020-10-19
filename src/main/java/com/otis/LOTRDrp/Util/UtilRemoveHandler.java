@@ -8,7 +8,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
-import static com.otis.LOTRDrp.LOTRDrpMain.OTISLog;
 
 
 public class UtilRemoveHandler {
@@ -16,7 +15,7 @@ public class UtilRemoveHandler {
         File oldconfig = new File(event.getModConfigurationDirectory(), "lotrdrp.cfg");
         if (oldconfig.exists()) {
             oldconfig.deleteOnExit();
-            OTISLog("Removed Old Config File");
+            LOTRDrpMain.LOG.info("Removed Old Config File");
         }
 
 
@@ -26,7 +25,7 @@ public class UtilRemoveHandler {
         File config = new File(event.getModConfigurationDirectory(), LOTRDrpMain.MODID+".cfg");
         if (config.exists()) {
             config.deleteOnExit();
-            OTISLog("Reset Config File");
+            LOTRDrpMain.LOG.info("Reset Config File");
         }
 
     }

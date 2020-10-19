@@ -58,11 +58,11 @@ public static ISupportedServer OtisSiegeServer = new ISupportedServer() {
 	@Override
 	public String ip() {
 
-		return "LOTRSiege.beastmc.com";
+		return "144.217.39.165:25586";
 	}
 	@Override
 	public String iconName() {
-		return "siege";
+		return "pvpServer";
 	}
 };	 
 public static ISupportedServer SecondServerThatWillNotRuleAnything = new ISupportedServer() {
@@ -128,7 +128,7 @@ public static ISupportedServer DOME = new ISupportedServer() {
 public static ISupportedServer Ascension = new ISupportedServer() {
 	@Override
 	public String name() {
-		return "Ascension d’Arda";
+		return "Ascension d'Arda";
 	}
 	@Override
 	public String ip() {
@@ -170,7 +170,20 @@ public static ISupportedServer Champ = new ISupportedServer() {
 		return "cg";
 	}
 };
-	
+public static ISupportedServer Reforged = new ISupportedServer() {
+	@Override
+	public String name() {
+			return "Middle Earth Reforged";
+		}
+	@Override
+	public String ip() {
+			return "41.216.190.100:25565";
+	}
+	@Override
+	public String iconName() {
+			return "minecraft-lord-of-the-rings-mod";
+		}
+};
 	private static final Map<String, ISupportedServer> servers = new HashMap<>();
 	private static ArrayList<String> serverList = new ArrayList<String>();
 	
@@ -186,7 +199,7 @@ public static ISupportedServer Champ = new ISupportedServer() {
 		addServer(Ascension);
 		addServer(Edgorovs);
 		addServer(Champ);
-
+		addServer(Reforged);
 
 	}
 	public static void addServer(ISupportedServer server) {

@@ -9,7 +9,8 @@ import net.minecraft.event.HoverEvent;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IChatComponent;
-import static com.otis.LOTRDrp.LOTRDrpMain.OTISLog;
+
+import static com.otis.LOTRDrp.LOTRDrpMain.LOG;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -25,7 +26,7 @@ public class UtilGetSeason {
             final Thread checkThread = new Thread("Checker") {
                 public void run() {
                     try {
-                        OTISLog("Checking Season");
+                        LOG.info("Checking Season");
                         final URL url = new URL(seasonUrl);
                         final BufferedReader seasonReader = new BufferedReader(new InputStreamReader(url.openStream()));
                         String season = "";
@@ -36,9 +37,9 @@ public class UtilGetSeason {
                         if (season.contains("true")){
                             isSeason = true;
                             seasonId = "season";
-                            OTISLog("Found Season");
+                            LOTRDrpMain.LOG.info("Found Season");
                         }else {
-                            OTISLog("No Season Found");
+                            LOTRDrpMain.LOG.info("No Season Found");
 
                             return;
                         }
@@ -50,7 +51,7 @@ public class UtilGetSeason {
 
 
                     } catch (Exception e) {
-                        LOTRDrpMain.OTISLog("Season Check Failed");
+                        LOTRDrpMain.LOG.error("Season Check Failed");
                         e.printStackTrace();
                     }
                 }

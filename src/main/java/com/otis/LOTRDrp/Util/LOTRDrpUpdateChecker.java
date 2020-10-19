@@ -73,7 +73,7 @@ public class LOTRDrpUpdateChecker {
 
                         }
                     } catch (Exception e) {
-                       LOTRDrpMain.OTISLog("Update Check Failed");
+                       LOTRDrpMain.LOG.error("Update Check Failed");
                         e.printStackTrace();
                     }
                 }
