@@ -24,7 +24,7 @@ public class LOTRDrpConnector {
 		handlers.ready = new OnReady() {
 			@Override
 			public void accept(DiscordUser arg0) {
-				com.otis.LOTRDrp.LOTRDrpMain.OTISLog("LOTR Drp Is Ready!");
+				LOTRDrpMain.LOG.info("LOTR Drp Is Ready!");
 				
 			}
 

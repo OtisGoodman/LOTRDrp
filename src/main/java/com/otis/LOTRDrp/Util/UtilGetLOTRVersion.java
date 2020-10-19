@@ -67,7 +67,7 @@ public class UtilGetLOTRVersion {
 
                     
                     } catch (Exception e) {
-                        LOTRDrpMain.OTISLog("LOTR Check Failed");
+                        LOTRDrpMain.LOG.error("LOTR Check Failed");
                         e.printStackTrace();
                     }
                 }

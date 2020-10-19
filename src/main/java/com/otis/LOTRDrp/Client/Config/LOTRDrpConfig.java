@@ -10,7 +10,6 @@ import net.minecraftforge.common.config.Configuration;
 
 import javax.rmi.CORBA.Util;
 
-import static com.otis.LOTRDrp.LOTRDrpMain.OTISLog;
 
 import java.io.File;
 import java.util.Arrays;
@@ -33,8 +32,6 @@ public class LOTRDrpConfig {
     public static boolean cfgEnableServers;
     public static boolean cfgEnableDrp;
     public static boolean enableVersionCheck;
-    public static boolean enableIngameLoging;
-    public static boolean hasSeenChnagelog;
     public static boolean incognitoMode;
 
     public static String theme;
@@ -46,7 +43,7 @@ public class LOTRDrpConfig {
             File path = new File(cfgDir + "/LOTRDrp/" + LOTRDrpMain.MODID + ".cfg");
             config = new Configuration(path);
             loadConfig();
-            OTISLog("Config Inited");
+            LOTRDrpMain.LOG.info("Config Inited");
 
         }
     }
@@ -58,7 +55,6 @@ public class LOTRDrpConfig {
         enableVersionCheck = config.getBoolean("Enable Version Check", Configuration.CATEGORY_GENERAL, true, "If this is enabled LOTRDrp will check for updates.");
         cfgEnableDrp = config.getBoolean("Enable Presence", Configuration.CATEGORY_GENERAL, true, "If this is enabled your LOTRDrp pressence will not apear.");
         theme = config.getString("DRP Theme", Configuration.CATEGORY_GENERAL, "random", "Themes " + LOTRDrpConfig.getAllThemeNames());
-        enableIngameLoging = config.getBoolean("Enable Ingame Loging", Configuration.CATEGORY_GENERAL, false, "If this is enabled all your LOTRDrp logs showup in minecraft chat.");
         incognitoMode = config.getBoolean("Incognito Mode", Configuration.CATEGORY_GENERAL, false, "If this is enabled your server and world name will be hiden and the supported server system will be disabled.");
         if (theme != allThemes[0] || theme != (allThemes[1]) || theme != (allThemes[2]) || theme != (allThemes[3])
                 || theme != (allThemes[4]) || theme != (allThemes[5]) || theme != (allThemes[6]) || theme != (allThemes[7])
@@ -68,71 +64,71 @@ public class LOTRDrpConfig {
         Random rand = new Random();
         themeNo = rand.nextInt(allThemesId.length);
         LOTRDrpMain.theme = "minecraft-lord-of-the-rings-mod";
-        OTISLog("Invalid Theme " + theme);
+        LOTRDrpMain.LOG.error("Invalid Theme " + theme);
 
         if (theme.equalsIgnoreCase("default")) {
             LOTRDrpMain.theme = "minecraft-lord-of-the-rings-mod";
-            OTISLog("theme set to default");
+            LOTRDrpMain.LOG.info("theme set to default");
 
         } else if (theme.equalsIgnoreCase("mithril")) {
             LOTRDrpMain.theme = "mithril";
-            OTISLog("theme set to mithril");
+            LOTRDrpMain.LOG.info("theme set to mithril");
 
         } else if (theme.equalsIgnoreCase("pvp")) {
             LOTRDrpMain.theme = "pvp";
-            OTISLog("theme set to pvp");
+            LOTRDrpMain.LOG.info("theme set to pvp");
 
         } else if (theme.equalsIgnoreCase("quest")) {
             LOTRDrpMain.theme = "quest";
-            OTISLog("theme set to quest");
+            LOTRDrpMain.LOG.info("theme set to quest");
 
         } else if (theme.equalsIgnoreCase("kings-foil")) {
             LOTRDrpMain.theme = "kingsfoil";
-            OTISLog("theme set to kings-foil");
+            LOTRDrpMain.LOG.info("theme set to kings-foil");
 
         } else if (theme.equalsIgnoreCase("book")) {
             LOTRDrpMain.theme = "book";
-            OTISLog("theme set to book");
+            LOTRDrpMain.LOG.info("theme set to book");
 
         } else if (theme.equalsIgnoreCase("smoke-ship")) {
             LOTRDrpMain.theme = "smokeship";
-            OTISLog("theme set to smoke-ship");
+            LOTRDrpMain.LOG.info("theme set to smoke-ship");
 
         }
         if (theme.equalsIgnoreCase("coin")) {
             LOTRDrpMain.theme = "coin";
-            OTISLog("theme set to coin");
+            LOTRDrpMain.LOG.info("theme set to coin");
 
         } else if (theme.equalsIgnoreCase("pipe")) {
             LOTRDrpMain.theme = "siege";
-            OTISLog("theme set to pipe");
+            LOTRDrpMain.LOG.info("theme set to pipe");
 
         } else if (theme.equalsIgnoreCase("horn")) {
             LOTRDrpMain.theme = "horn";
-            OTISLog("theme set to horn");
+            LOTRDrpMain.LOG.info("theme set to horn");
 
         } else if (theme.equalsIgnoreCase("compass")) {
             LOTRDrpMain.theme = "compass";
-            OTISLog("theme set to compass");
+            LOTRDrpMain.LOG.info("theme set to compass");
 
         } else if (theme.equalsIgnoreCase("true-silver")) {
             LOTRDrpMain.theme = "truesilver";
-            OTISLog("theme set to true-silver");
+            LOTRDrpMain.LOG.info("theme set to true-silver");
         } else if (theme.equalsIgnoreCase("random")) {
             LOTRDrpMain.theme = allThemesId[themeNo];
-            OTISLog("theme set to random");
+            LOTRDrpMain.LOG.info("theme set to random");
         }else if (theme.equalsIgnoreCase("bounty")) {
             LOTRDrpMain.theme = "bounty";
-            OTISLog("theme set to bounty");
+            LOTRDrpMain.LOG.info("theme set to bounty");
         }else if (theme.equalsIgnoreCase("flesh")) {
             LOTRDrpMain.theme = "flesh";
-            OTISLog("theme set to flesh");
+            LOTRDrpMain.LOG.info("theme set to flesh");
         }else if (theme.equalsIgnoreCase("gondolin")) {
             LOTRDrpMain.theme = "gondolin";
-            OTISLog("theme set to gondolin");
+            LOTRDrpMain.LOG.info("theme set to gondolin");
         }else if (theme.equalsIgnoreCase("evenstar")) {
             LOTRDrpMain.theme = "evenstar";
-            OTISLog("theme set to evenstar");
+            LOTRDrpMain.LOG.info("theme set to evenstar");
         }
 
 
@@ -146,7 +142,7 @@ public class LOTRDrpConfig {
 
     {
         config.save();
-        OTISLog("Config Saved");
+        LOTRDrpMain.LOG.info("Config Saved");
     }
 
 }
@@ -157,7 +153,7 @@ public class LOTRDrpConfig {
     public void onCfgChnageEvent (ConfigChangedEvent.OnConfigChangedEvent event){
         if (event.modID.equals(LOTRDrpMain.MODID)){
             loadConfig();
-            OTISLog("Config Has Been Changed");
+            LOTRDrpMain.LOG.info("Config Has Been Changed");
 
         }
 

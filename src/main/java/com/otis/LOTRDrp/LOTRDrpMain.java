@@ -19,6 +19,8 @@ import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IChatComponent;
 import net.minecraftforge.common.MinecraftForge;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.util.Timer;
@@ -31,13 +33,14 @@ public class LOTRDrpMain {
     public static LOTRDrpClientProxy proxy;
     public static File configDir;
     public static final String MODID = "lotrdrp";
-    public static final String VERSION = "1.8";
+    public static final String VERSION = "1.9";
     public static Boolean isDevBuild = false;
     public static final String NAME = "LOTR Drp";
     @Mod.Instance
     public static LOTRDrpMain drp = new LOTRDrpMain();
     public LOTRDrpConnector discord;
     private boolean playingOnSupportedServer = false;
+    public static final Logger LOG = LogManager.getLogger(NAME);
 
 
     public static String theme = "";
@@ -49,7 +52,7 @@ public class LOTRDrpMain {
         LOTRDrpEventHandler handler = new LOTRDrpEventHandler();
         MinecraftForge.EVENT_BUS.register(handler);
         FMLCommonHandler.instance().bus().register(handler);
-        OTISLog("Thanks For Using LOTR Drp V" + VERSION);
+        LOG.info("Thanks For Using LOTR Drp V" + VERSION);
         proxy.preload();
         String cfgDir = event.getModConfigurationDirectory().toString();
         LOTRDrpConfig.init(cfgDir);
@@ -82,29 +85,7 @@ public class LOTRDrpMain {
     }
 
 
-    public static void OTISLog(String text) {
-        System.out.println("[LOTR Drp] " + text);
-        if (LOTRDrpConfig.enableIngameLoging) {
-            Timer timer = new Timer();
 
-            timer.schedule(new TimerTask() {
-
-                public void run() {
-                    final IChatComponent log = new ChatComponentText(
-                            text);
-                    log.getChatStyle().setItalic(true);
-
-                    log.getChatStyle().setColor(EnumChatFormatting.GRAY);
-                    final EntityPlayer entityplayer = Minecraft.getMinecraft().thePlayer;
-
-                    if (entityplayer != null) {
-                        entityplayer.addChatComponentMessage(log);
-                    }
-                }
-            }, 10*1000);//perform run() for 5 seconds
-
-        }
-        }
 
 
     public void setPlayingOnSupportedServer(boolean b) {

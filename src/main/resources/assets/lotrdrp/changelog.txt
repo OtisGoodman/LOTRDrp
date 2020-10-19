@@ -81,7 +81,7 @@ Changed &
 1.8
 - /checkForUpdates command
 + Evenstar theme
-+ Ascension d’Arda supported
++ Ascension dArda supported
 - hArda support
 - Spark of arda support
 - DOME support
@@ -93,3 +93,10 @@ Changed &
 + Edgorovs realm support
 + The Champions Game support
 % The pipe theme
+
+1.9
+- Ingame logging
++ Middle Earth Reforged support
+& Otis log code
+% File encoding errors
+& Updated to LOTR 36.6

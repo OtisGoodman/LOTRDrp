@@ -1,5 +1,5 @@
-html{
-zoom:80%;
+html {
+  zoom: 80%;
 }
 @font-face {
   font-family: "hobbiton";
@@ -186,7 +186,7 @@ yellow {
   font-size: 15;
   color: grey;
 }
-.warning{
-  color:darkred;
+.warning {
+  color: darkred;
   background-color: black;
 }
