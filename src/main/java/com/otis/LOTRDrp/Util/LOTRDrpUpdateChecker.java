@@ -47,8 +47,8 @@ public class LOTRDrpUpdateChecker {
                                entityplayer.addChatComponentMessage(devBuild);
                            }
                        }else if (!updateVersion.equals(currentVersion)) {
-                            final IChatComponent newUpdate = new ChatComponentText(
-                                    "[LOTR Drp Update Checker] Update Available! "+updateVersion +" Click Here To Download The Latest Update");
+                                final IChatComponent newUpdate = new ChatComponentText(
+                                        "[LOTR Drp Update Checker] Update Available! "+updateVersion +" Click Here To Download The Latest Update");
 
                             newUpdate.getChatStyle().setColor(EnumChatFormatting.DARK_RED);
                             newUpdate.getChatStyle().setChatHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ChatComponentText("Check Out Our Website And Download The Latest Version Here!")));

@@ -33,7 +33,7 @@ public class LOTRDrpMain {
     public static LOTRDrpClientProxy proxy;
     public static File configDir;
     public static final String MODID = "lotrdrp";
-    public static final String VERSION = "1.9";
+    public static final String VERSION = "1.9.1";
     public static Boolean isDevBuild = false;
     public static final String NAME = "LOTR Drp";
     @Mod.Instance

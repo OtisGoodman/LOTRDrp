@@ -99,3 +99,8 @@ Changed &
 + Middle Earth Reforged support
 & Otis log code
 % File encoding errors
+& Updated to LOTR 36.6
+
+1.9.1
+& Second server IP
++ Website link for ME Reforged
