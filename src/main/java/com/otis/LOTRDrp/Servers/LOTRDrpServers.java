@@ -73,43 +73,14 @@ public static ISupportedServer SecondServerThatWillNotRuleAnything = new ISuppor
 	@Override
 	public String ip() {
 
-		return "54.39.28.42";
+		return "t2nds.net";
 	}
 	@Override
 	public String iconName() {
 		return "second";
 	}
 };	
-public static ISupportedServer SecondServerThatWillNotRuleAnything2 = new ISupportedServer() {
-	@Override
-	public String name() {
-		return "The Second Server That Wont Rule Anything";
-	}
-	@Override
-	public String ip() {
 
-		return "54.39.28.42:25566";
-	}
-	@Override
-	public String iconName() {
-		return "second";
-	}
-};	
-public static ISupportedServer SecondServerThatWillNotRuleAnything3 = new ISupportedServer() {
-	@Override
-	public String name() {
-		return "The Second Server That Wont Rule Anything";
-	}
-	@Override
-	public String ip() {
-
-		return "54.39.28.42:25566";
-	}
-	@Override
-	public String iconName() {
-		return "second";
-	}
-};	
 public static ISupportedServer DOME = new ISupportedServer() {
 	@Override
 	public String name() {
@@ -193,8 +164,6 @@ public static ISupportedServer Reforged = new ISupportedServer() {
 		addServer(TheRingOfPower);
 		addServer(OtisSiegeServer);
 		addServer(SecondServerThatWillNotRuleAnything);
-		addServer(SecondServerThatWillNotRuleAnything2);
-		addServer(SecondServerThatWillNotRuleAnything3);
 		addServer(DOME);
 		addServer(Ascension);
 		addServer(Edgorovs);
