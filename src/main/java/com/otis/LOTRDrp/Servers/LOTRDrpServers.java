@@ -155,6 +155,20 @@ public static ISupportedServer Reforged = new ISupportedServer() {
 			return "minecraft-lord-of-the-rings-mod";
 		}
 };
+public static ISupportedServer Quenta = new ISupportedServer() {
+	@Override
+	public String name() {
+			return "Ilu Ambar - Quenta Arda";
+		}
+	@Override
+	public String ip() {
+			return "51.81.53.218:25566";
+		}
+	@Override
+	public String iconName() {
+			return "quenta";
+		}
+	};
 	private static final Map<String, ISupportedServer> servers = new HashMap<>();
 	private static ArrayList<String> serverList = new ArrayList<String>();
 	
@@ -169,6 +183,7 @@ public static ISupportedServer Reforged = new ISupportedServer() {
 		addServer(Edgorovs);
 		addServer(Champ);
 		addServer(Reforged);
+		addServer(Quenta);
 
 	}
 	public static void addServer(ISupportedServer server) {
