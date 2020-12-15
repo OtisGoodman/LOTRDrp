@@ -104,3 +104,6 @@ Changed &
 1.9.1
 & Second server IP
 + Website link for ME Reforged
+
+1.9.2
++ Supported Ilu Ambar - Quenta Arda

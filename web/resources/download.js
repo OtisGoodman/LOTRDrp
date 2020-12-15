@@ -5,6 +5,6 @@ function downloadURI(uri, name) {
   link.click();
 }
 function downloadLatest() {
-  downloadURI("../builds/LOTRDRP-1.9.1", "LOTRDRP-1.9.1.jar");
-  downloadURI("../builds/discord-core.jar","discord-core.jar");
+  downloadURI("../builds/LOTRDRP-1.9.2.jar", "LOTRDRP-1.9.2.jar");
+  downloadURI("../builds/discord-core.jar", "discord-core.jar");
 }
